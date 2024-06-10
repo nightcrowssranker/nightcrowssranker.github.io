@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mob Respawn Tracker</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 80%; margin: 0 auto; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <title>Mob Respawn Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mob Respawn Tracker</h1>
-        <table>
-            <tr>
-                <th>Mob Name</th>
-                <th>Respawn Time</th>
-            </tr>
-            <tr>
-                <td>Example Mob</td>
-                <td id="mob1-respawn-time">Calculating...</td>
-            </tr>
-        </table>
+        <h1>Mob Respawn Calculator</h1>
+        <label for="spawnTime">Enter Spawn Time:</label>
+        <input type="time" id="spawnTime">
+        <label for="respawnInterval">Enter Respawn Interval (in minutes):</label>
+        <input type="number" id="respawnInterval" min="1">
+        <button onclick="calculateRespawn()">Calculate Respawn Time</button>
+        <h2 id="result"></h2>
     </div>
-    <script>
-        // Example JavaScript for calculating respawn time
-        const calculateRespawnTime = () => {
-            const now = new Date();
-            const respawnTime = new Date(now.getTime() + 60000); // +60 seconds for example
-            document.getElementById('mob1-respawn-time').innerText = respawnTime.toLocaleTimeString();
-        };
-
-        // Call the function to calculate respawn time
-        calculateRespawnTime();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
